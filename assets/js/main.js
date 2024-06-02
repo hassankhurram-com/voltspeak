@@ -291,4 +291,36 @@
    */
   new PureCounter();
 
+
+  document.querySelector('.php-email-form').addEventListener('submit', async function (e) {
+    e.preventDefault();
+  
+    const formData = new FormData(this);
+    const jsonData = {};
+  
+    for (const [key, value] of formData.entries()) {
+      jsonData[key] = value;
+    }
+  
+    try {
+      const response = await fetch('https://mailer.ms.hassankhurram.com/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(jsonData)
+      });
+  
+      if (response.ok) {
+        const responseData = await response.json();
+        console.log(responseData);
+      } else {
+        console.error('Failed to send email:', response.statusText);
+      }
+    } catch (error) {
+      console.error('Error sending email:', error);
+    }
+  });
+  
+
 })()
