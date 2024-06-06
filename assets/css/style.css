@@ -183,7 +183,6 @@ h6 {
 #  Get Startet Button
 --------------------------------------------------------------*/
 .get-started-btn {
-  margin-top: 30px;
   color: #fff;
   border-radius: 7px;
   padding: 7px 25px 8px 25px;
@@ -1164,7 +1163,7 @@ section {
 --------------------------------------------------------------*/
 .process {
   background: #fff;
-  padding: 60px 0;
+  padding: 40px 0;
 }
 /*--------------------------------------------------------------
 # Team
